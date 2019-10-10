@@ -2,15 +2,15 @@
  
 Hello co-moussaillon, pour vérifier mes 3 programmes : 
 
-  git clone https://github.com/140ch204/08_crazy_scrapper.git
+  > git clone https://github.com/140ch204/08_crazy_scrapper.git
 
-  cd 08_crazy_scrapper
+  > cd 08_crazy_scrapper
 
-  rspec ./spec/scrapper_spec.rb   # pour Dark Trader
+  > rspec ./spec/scrapper_spec.rb   # pour Dark Trader
 
-  rspec ./spec/mairie_spec.rb     # pour Mairie christmas
+  > rspec ./spec/mairie_spec.rb     # pour Mairie christmas
 
-  rspec ./spec/deputy_spec.rb     # pour Cher député
+  > rspec ./spec/deputy_spec.rb     # pour Cher député
 
   Enjoy ! 
 
@@ -19,18 +19,18 @@ En détail :
 2.2. Dark Trader
 
   Sujet : 
-  
+
     Lehman Brothers, impressionnés par ton algorithme d'optimisation d'achat / vente, veut encore faire appel à toi. Leur Chief Digital Officer, très hype, a entendu parler au JT de TF1 d'un "truc révolutionnaire qui s'appelle le bloque-chienne". Il veut en acheter plein. Pour le conseiller, tu vas devoir récupérer le cours de toutes les cryptomonnaies du marché.
 
     En prenant pour source le site CoinMarketCap, fait un programme qui récupère le cours de toutes les cryptomonnaies et les enregistre bien proprement dans un array de hashs.
 
   Le testeur :
 
-    rspec ./spec/scrapper_spec.rb
+  > rspec ./spec/scrapper_spec.rb
 
   Le programme : 
 
-    ruby ./lib/scrapper.rb
+  > ruby ./lib/scrapper.rb
 
 
 
@@ -38,11 +38,11 @@ En détail :
 
   Le programme : 
 
-    ruby ./lib/mairie.rb
+  > ruby ./lib/mairie.rb
 
   Le testeur :
 
-    rspec ./spec/mairie_spec.rb
+  > rspec ./spec/mairie_spec.rb
 
   Sujet : 
 
@@ -52,11 +52,11 @@ En détail :
 
   Le programme : 
 
-    ruby ./lib/deputy.rb
+  > ruby ./lib/deputy.rb
 
   Le testeur :
 
-    rspec ./spec/deputy_spec.rb
+  > rspec ./spec/deputy_spec.rb
 
   Sujet : 
 
