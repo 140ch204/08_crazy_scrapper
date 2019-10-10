@@ -12,6 +12,8 @@ describe "dark_trader metho that scraps crypto website " do
   it "contains data " do
     expect(test_get_all_townhall_email.length > 5).to eq(true) 
   end
-
+  it "Email contains @ " do
+    expect(test_get_all_townhall_email[3].values[0].include? "@" ).to eq(true) 
+  end
 
 end
