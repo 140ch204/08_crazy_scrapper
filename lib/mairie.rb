@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'nokogiri'
 
-def get_townhall_email(townhall_url)
+def get_townhall_data(townhall_url)
   # Renvoie l'adresse mail d'une mairie
   page = website_content(townhall_url) # chargement du contenu de la page
 
@@ -12,7 +12,16 @@ def get_townhall_email(townhall_url)
   #page.xpath('//a[contains(@href, "mailto")]')
 
   # scrap méthode xpath
-  page.xpath('/html/body/div/main/section[2]/div/table/tbody/tr[4]/td[2]').text
+
+  townhall_name = page.xpath('/html/body/div/main/section[2]/div/table/tbody/tr[1]/td[1]').text.to_s.gsub("Adresse mairie de ", "").downcase
+  
+  townhall_mail = page.xpath('/html/body/div/main/section[2]/div/table/tbody/tr[4]/td[2]').text
+
+  townhall_data_hash = { townhall_name => townhall_mail }
+
+  #page.xpath('/html/body/div/main/section[2]/div/table/tbody/tr[4]/td[2]').text
+
+  townhall_data_hash
 
 end
 
@@ -52,7 +61,7 @@ def get_all_townhall_email(departement_url)
   townhall_url_array.each do |townhall_url|
   # for townhall_index in (1..4)  
   #  townhall_url = townhall_url_array[townhall_index]
-    townhall_email_array += [get_townhall_email(townhall_url)]
+    townhall_email_array += [get_townhall_data(townhall_url)]
   end
 
   townhall_email_array
@@ -69,4 +78,4 @@ puts
 
 #puts get_townhall_urls("https://annuaire-des-mairies.com/val-d-oise.html")
 
-#puts get_townhall_email("http://www.annuaire-des-mairies.com/91/abbeville-la-riviere.html")
+#puts get_townhall_data("http://www.annuaire-des-mairies.com/91/abbeville-la-riviere.html")
